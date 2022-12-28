@@ -4,17 +4,22 @@
 #Пример:
 #- k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 import random
-with open('k.txt', 'r', encoding='utf-8') as file:
-    k = int(file.readline())
-    a, b, c = random.randint (1, 100), random.randint(0, 100), random.randint(0, 100)
-    if b == 0 and c == 0:
-        print(f'{a}*x^2')
-    elif c == 0:
-        print(f'{a}*x^2 + {b}*x')
-    elif b == 0:
-        print(f'{a}*x^2 + {c}')
-    else:
-        print(f'{a}*x^2 + {b}*x + {c}')
+
+with open('k.txt', 'w', encoding='utf-8') as file:
+    k = int(input())
+    f_List = []
+    for i in range(k, -1, -1):
+        a = random.randint(0, 100)
+        if a > 0:
+            if i == 1:
+                f_List.append(str(a) + '*x')
+            elif i == 0:
+                f_List.append(str(a))
+            else:
+                f_List.append(str(a) + '*x^' + str(i))
+    for i in range(len(f_List) - 1):
+        file.write(str(f_List[i]) + ' + ')
+    file.write(str(f_List[-1]))
     
 
     
