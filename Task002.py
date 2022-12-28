@@ -1,7 +1,7 @@
 #2. Задайте натуральное число N. 
 # Напишите программу, которая составит список простых множителей числа N.
 with open('N.txt', 'w', encoding='utf-8') as file:
-    file.write(30)
+    file.write('30')
 with open('N.txt', 'r', encoding='utf-8') as file:
     n = int(file.readline())
     some_list = []
